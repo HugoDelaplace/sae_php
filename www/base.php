@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizz</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="accueil.php"></a>
-            <a href="quizz.php"></a>
-            <a href="creer_quizz.php"></a>
-            <a href="contact.php"></a>
+            <a href="accueil.php">Accueil</a>
+            <a href="quizz.php">Quizz</a>
+            <a href="creer_quizz.php">Créer un quizz</a>
+            <a href="contact.php">Contact</a>
         </nav>
     </header>
 </body>
