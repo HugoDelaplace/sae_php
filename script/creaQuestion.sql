@@ -1,8 +1,16 @@
 drop table QUESTION, TYPEQUESTION;
 
+create table QUIZZ(
+    idQ int auto increment primary key,
+    titreQ varchar(100),
+    descriptionQ varchar(255),
+    nb_questions int
+)
+
 create table QUESTION(
     nom varchar(20) primary key,
     idType int,
+    idQ int,
     textQuestion text,
     choix varchar(255),
     reponse varchar(100),
@@ -15,6 +23,7 @@ create table TYPEQUESTION(
 );
 
 ALTER TABLE QUESTION ADD FOREIGN KEY (idType) REFERENCES TYPEQUESTION(idType);
+ALTER TABLE QUESTION ADD FOREIGN KEY (idQ) REFERENCES QUIZZ(idQ);
 
 INSERT INTO TYPEQUESTION VALUES
 (1, 'text'),
