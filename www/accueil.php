@@ -1,4 +1,4 @@
-<?php require_once "base.php";?>
+<?php require_once "base.html";?>
 
 <body>
     <h1>PokéQuizz</h1>

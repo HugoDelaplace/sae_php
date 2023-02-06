@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php require_once "base.html";?>
 <body>
     <form action="POST">
         <p> Qu'elle est la couleur du cheval blanc d'Henry IV ?</p>
