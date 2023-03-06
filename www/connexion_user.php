@@ -1,6 +1,6 @@
 <?php require_once "base.html";?>
 
-<body>
+<body class="quizz">
     <h1>Se connecter</h1>
     <div class="connecter">
         <form action="connexion_user.php" method="post">

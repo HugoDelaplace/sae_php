@@ -1,5 +1,5 @@
 <?php require_once "base.html";?>
-<body>
+<body class="quizz">
     <h1>Créer un quizz</h1>
     <form action="quizz_cree.php" method="post">
         <label for="titre">Titre :</label>
