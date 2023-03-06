@@ -1,11 +1,11 @@
 <?php 
     require_once "connexion.php";
     $db = connectBd();
-    if (isset($_GET["titre"]) && isset($_GET["description"]) && isset($_GET["nb_questions"])) {
+    if (!empty($_GET["titre"]) && !empty($_GET["description"]) && !empty($_GET["nb_questions"])) {
         $titre = $_GET["titre"];
         $description = $_GET["description"];
         $nb_questions = $_GET["nb_questions"];
-        $sql = "INSERT INTO quizz (titreQ, descriptionQ, nb_questions) VALUES ('$titre', '$description', '$nb_questions')";
+        $sql = "INSERT INTO QUIZZ (idQ, titreQ, descriptionQ, nb_questions) VALUES ('$titre', '$description', '$nb_questions')";
         $db->exec($sql);
         $id = $db->lastInsertId();
         echo "Quizz créé";
@@ -13,6 +13,5 @@
     }
     else {
         echo "Erreur";
-        header("Location: creer_quizz.php");
     }
 ?>
