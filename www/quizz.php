@@ -1,5 +1,5 @@
 <?php require_once "base.html";?>
-<body>
+<body class="quizz">
     <form action="POST">
         <p> Qu'elle est la couleur du cheval blanc d'Henry IV ?</p>
         <input placeholder="votre réponse ici"></input>
