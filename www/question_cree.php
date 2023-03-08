@@ -24,5 +24,5 @@ if ($stmt->rowCount() == 0) {
 else {
     echo "Question créée";
 }
-header("Location: questions.php");
+header("Location: questions.php?$idQ");
 ?>

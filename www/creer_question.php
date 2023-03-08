@@ -1,8 +1,12 @@
 <?php require_once "base.html";?>
 <body class="quizz">
     <h1>Créer un quizz</h1>
-    <form action="question_cree.php" method="get">
-        <?php $idQ = $_GET["idQ"]; ?>
+    <form action="question_cree.php?" method="get">
+        <?php $id = $_GET["idQ"];
+            print_r($id);
+            echo "<input type='hidden' name='idQ' id='idQ' value='$id'>"
+        ?>
+        <?php $idQ = $GET_["idQ"]; ?>
         <label for="nom">Nom :</label>
         <input type="text" name="nom" required>
         <label for="idType">Type :</label>
@@ -27,6 +31,6 @@
         <input type="text" name="reponse" required>
         <label for="score">Score :</label>
         <input type="number" name="score" required>
-        <input type="submit" value="Créer">
+        <button type="submit">Créer</button>
     </form>
 </body>

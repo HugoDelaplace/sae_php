@@ -1,6 +1,8 @@
 <?php require_once "base.html";?>
 <body class="quizz">
-    <button><a href="creer_question.php">Créer une question</a></button>
+    <?php $idQ = $_GET["id"];
+        echo "<button><a href='creer_question.php?idQ=$idQ'>Créer une question</a></button>"
+    ?>
     <form action="POST">
         <p> Qu'elle est la couleur du cheval blanc d'Henry IV ?</p>
         <input placeholder="votre réponse ici"></input>

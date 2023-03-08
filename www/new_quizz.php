@@ -10,7 +10,7 @@
         foreach ($quizz as $q) {
             $id = $q["idQ"];
             $titre = $q["titreQ"];
-            echo "<li><a href='quizz.php?id=$id' class='li-quizz'>$titre</a></li>";
+            echo "<li><a href='questions.php?id=$id' class='li-quizz'>$titre</a></li>";
         }
     ?>
     </ul>

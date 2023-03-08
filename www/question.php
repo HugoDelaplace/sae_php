@@ -1,0 +1,15 @@
+<h1>
+    $nom
+</h1>
+<p>
+    $text
+</p>
+<p>
+    $choix
+</p>
+<p>
+    $reponse
+</p>
+<p>
+    $score
+</p>
