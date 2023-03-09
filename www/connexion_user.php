@@ -26,6 +26,7 @@
                 session_start();
                 $_SESSION["pseudo"] = $user["pseudo"];
                 $_SESSION["id"] = $user["id"];
+                $_SESSION["login"] = true;
                 header("Location: accueil.php");
             }
             else {

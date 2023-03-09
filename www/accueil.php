@@ -7,3 +7,10 @@
         <p>Testez vos connaissances sur les Pokémon et les jeux Pokémon !</p>
     </div>
 </body>
+
+<?php
+session_start();
+if(isset($_SESSION["login"]) || $_SESSION["login"] == true){
+    echo $_SESSION["pseudo"];
+}
+?>
