@@ -16,7 +16,7 @@
 <?php require "connexion.php";
     if ($_POST) {
         $db = connectBd();
-        if (isset($_POST["pseudo"]) && isset($_POST["mdp"])) {
+        if (!empty($_POST["pseudo"]) && !empty($_POST["mdp"])) {
             $pseudo = $_POST["pseudo"];
             $mdp = $_POST["mdp"];
             $sql = "SELECT * FROM user WHERE pseudo = '$pseudo' AND mdp = '$mdp'";
