@@ -1,4 +1,4 @@
-drop table if exists  QUESTION, QUIZZ, TYPEQUESTION;
+drop table if exists  QUESTION, QUIZZ, TYPEQUESTION, USER;
 
 create table QUIZZ(
     idQ int(100) primary key not null AUTO_INCREMENT,
@@ -19,6 +19,12 @@ create table QUESTION(
 create table TYPEQUESTION(
     idType int primary key,
     nomType varchar(100)
+);
+
+create table USER(
+    idU int(100) primary key not null AUTO_INCREMENT,
+    pseudo varchar(100),
+    mdp varchar(100)
 );
 
 ALTER TABLE QUESTION ADD FOREIGN KEY (idType) REFERENCES TYPEQUESTION(idType);

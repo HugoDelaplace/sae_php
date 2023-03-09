@@ -16,23 +16,25 @@
 </body>
 
 <?php require "connexion.php";
-    $db = connectBd();
-    if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["mdpC"])) {
-        $pseudo = $_POST["pseudo"];
-        $mdp = $_POST["mdp"];
-        $mdpC = $_POST["mdpC"];
-        if ($mdp == $mdpC) {
-            $sql = "INSERT INTO user (pseudo, mdp) VALUES ('$pseudo', '$mdp')";
-            $result = $db->query($sql);
-            header("Location: connexion_user.php");
+    if($_POST){
+        $db = connectBd();
+        if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["mdpC"])) {
+            $pseudo = $_POST["pseudo"];
+            $mdp = $_POST["mdp"];
+            $mdpC = $_POST["mdpC"];
+            if ($mdp == $mdpC) {
+                $sql = "INSERT INTO USER (pseudo, mdp) VALUES ('$pseudo', '$mdp')";
+                $result = $db->query($sql);
+                header("Location: connexion_user.php");
+            }
+            else {
+                echo "Erreur";
+                header("Location: inscription.php");
+            }
         }
         else {
             echo "Erreur";
             header("Location: inscription.php");
         }
-    }
-    else {
-        echo "Erreur";
-        header("Location: inscription.php");
     }
 ?>
