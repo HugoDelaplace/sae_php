@@ -1,6 +1,6 @@
-<?php require_once "base.html";?>
+<?php require_once "base.php";?>
 
-<body>
+<body class="quizz">
     <h1>PokéQuizz</h1>
     <div class="descri">
         <p>Le quizz Pokémon le plus complet du web !</p>
@@ -8,9 +8,3 @@
     </div>
 </body>
 
-<?php
-session_start();
-if(isset($_SESSION["login"]) || $_SESSION["login"] == true){
-    echo $_SESSION["pseudo"];
-}
-?>
