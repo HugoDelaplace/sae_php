@@ -46,6 +46,8 @@ $question = [
     )
 ];
 
+print_r($question);
+
 $question_total = 0;
 $question_correct = 0;
 $score_total = 0;

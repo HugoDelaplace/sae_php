@@ -3,7 +3,6 @@
     <h1>Créer un quizz</h1>
     <form action="question_cree.php?" method="get">
         <?php $id = $_GET["idQ"];
-            print_r($id);
             echo "<input type='hidden' name='idQ' id='idQ' value='$id'>"
         ?>
         <?php $idQ = $GET_["idQ"]; ?>
