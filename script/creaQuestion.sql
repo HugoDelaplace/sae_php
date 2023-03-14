@@ -1,11 +1,10 @@
-drop table QUESTION, TYPEQUESTION;
+drop table if exists  QUESTION, QUIZZ, TYPEQUESTION;
 
 create table QUIZZ(
-    idQ int auto increment primary key,
+    idQ int(100) primary key not null AUTO_INCREMENT,
     titreQ varchar(100),
-    descriptionQ varchar(255),
-    nb_questions int
-)
+    descriptionQ varchar(255)
+);
 
 create table QUESTION(
     nom varchar(20) primary key,
@@ -25,10 +24,14 @@ create table TYPEQUESTION(
 ALTER TABLE QUESTION ADD FOREIGN KEY (idType) REFERENCES TYPEQUESTION(idType);
 ALTER TABLE QUESTION ADD FOREIGN KEY (idQ) REFERENCES QUIZZ(idQ);
 
+insert into QUIZZ values 
+(null, 'Quizz1', 'lol'),
+(null, 'Quizz2', 'oui');
+
 INSERT INTO TYPEQUESTION VALUES
 (1, 'text'),
 (2, 'radio');
 
 insert into QUESTION values 
-("ultime", 1, "Quelle est la réponse à la question ultime de la vie?",null, "42", 4.2),
-("cheval", 2, "Quelle est la couleur du cheval blanc d'Henry IV ?", "bleu, blanc, rouge", "blanc", 2.0);
+("ultime", 1, 1, "Quelle est la réponse à la question ultime de la vie?", null, "42", 4.2),
+("cheval", 2, 1, "Quelle est la couleur du cheval blanc d'Henry IV ?", "bleu, blanc, rouge", "blanc", 2.0);

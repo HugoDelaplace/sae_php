@@ -1,23 +1,25 @@
 <?php require_once "base.html";?>
 <body class="quizz">
     <?php $idQ = $_GET["id"];
-        echo "<button><a href='creer_question.php?idQ=$idQ'>Créer une question</a></button>"
-    ?>
-    <form action="POST">
-        <p> Qu'elle est la couleur du cheval blanc d'Henry IV ?</p>
-        <input placeholder="votre réponse ici"></input>
+    $nom = $_GET["nom"];
+    $idType = $_GET["idType"];
+    $text = $_GET["textQuestion"];
+    $choix = $_GET["choix"];
+    $reponse = $_GET["reponse"];
+    $score = $_GET["score"];
+        echo "<button><a href='creer_question.php?idQ=$idQ'>Créer une question</a></button>";
+    echo "<form action='POST'>
+        <p>$text</p>
+        <input placeholder='votre réponse ici'></input>
         <p>9 + 10 = ?</p>
         <ul>
-            <li><input type="checkbox">19</input></li>
-            <li><input type="checkbox">21</input></li>
-            <li><input type="checkbox">910</input></li>
-            <li><input type="checkbox">2</input></li>
+            <li><input type='checkbox'>19</input></li>
+            <li><input type='checkbox'>21</input></li>
+            <li><input type='checkbox'>910</input></li>
+            <li><input type='checkbox'>2</input></li>
         </ul>
-    </form>
-</body>
-</html>
+    </form>";
 
-<?php
 $question = [
     array(
         "name" => "ultime",
@@ -45,8 +47,6 @@ $question = [
         "score" => 2
     )
 ];
-
-print_r($question);
 
 $question_total = 0;
 $question_correct = 0;

@@ -374,3 +374,16 @@ li .checkmark:after {
 .quizz {
     color:white;
 }
+
+.quizz .li-quizz{
+    color: black;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}

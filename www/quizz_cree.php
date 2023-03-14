@@ -1,23 +1,20 @@
-<?php 
-    require_once "connexion.php";
-    $db = connectBd();
-    if (!empty($_GET["titre"]) && !empty($_GET["nb_quest"])) {
-        $titre = $_GET["titre"];
-        $description = $_GET["description"];
-        $nb_questions = $_GET["nb_quest"];
-        $sql = "INSERT INTO QUIZZ (titreQ, descriptionQ, nb_questions) VALUES (:titre, :descri, :nb_q)";
-        $stmt = $db->prepare($sql);
-        $stmt->execute(array(':titre' => $titre, ':descri' => $description, ':nb_q' => $nb_questions));
-        if (!$stmt)
-            echo "Pb de requete";
-        else {
-            echo "Quizz ajouté";
-        }
-        $id = $db->lastInsertId();
-        echo "Quizz créé";
-        header("Location: quizz_cree.php?id=$id");
-    }
-    else {
-        echo "Erreur";
-    }
+<?php
+require_once "connexion.php";
+$db = connectBd();
+$titre = $_GET["titre"];
+$description = $_GET["description"];
+$sql = "INSERT INTO QUIZZ VALUES (null , :tit, :descri)";
+$stmt = $db->prepare($sql);
+$stmt->bindParam(':tit', $titre);
+$stmt->bindParam(':descri', $description);
+$stmt->execute();
+if ($stmt->rowCount() == 0) {
+    echo "Erreur";
+    header("Location: creer_quizz.php");
+}
+else {
+    echo "Quizz créé";
+}
+$id = $db->lastInsertId();
+header("Location: new_quizz.php");
 ?>
