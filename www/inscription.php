@@ -13,6 +13,11 @@
             <input type="submit" value="S'inscrire">
         </form>
     </div>
+
+    <div>
+        <p>Vous avez déjà un compte ?</p>
+        <a href="connexion_user.php"><button class="connex">Se connecter</button></a>
+    </div>
 </body>
 
 <?php require "connexion.php";
