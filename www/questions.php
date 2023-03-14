@@ -117,7 +117,6 @@
             echo "</ol><input type='submit' value='Envoyer'></form>";
         } else {
             $id = $_POST["id"];
-            print_r($id);
             $question_total = 0;
             $question_correct = 0;
             $score_total = 0;
