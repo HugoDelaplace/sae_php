@@ -1,7 +1,7 @@
 <?php require_once "base.php";?>
 
 <body class="quizz">
-    <h1>S'inscrire'</h1>
+    <h1>S'inscrire</h1>
     <div class="connecter">
         <form action="inscription.php" method="post">
             <label for="pseudo">Pseudo :</label>
