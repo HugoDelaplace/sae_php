@@ -1,4 +1,4 @@
-<?php require_once "base.html";?>
+<?php require_once "base.php";?>
 
 <body class="quizz">
     <h1>Se connecter</h1>
@@ -14,26 +14,29 @@
 </body>
 
 <?php require "connexion.php";
-    $db = connectBd();
-    if (isset($_POST["pseudo"]) && isset($_POST["mdp"])) {
-        $pseudo = $_POST["pseudo"];
-        $mdp = $_POST["mdp"];
-        $sql = "SELECT * FROM user WHERE pseudo = '$pseudo' AND mdp = '$mdp'";
-        $result = $db->query($sql);
-        $user = $result->fetch();
-        if ($user) {
-            session_start();
-            $_SESSION["pseudo"] = $user["pseudo"];
-            $_SESSION["id"] = $user["id"];
-            header("Location: accueil.php");
+    if ($_POST) {
+        $db = connectBd();
+        if (!empty($_POST["pseudo"]) && !empty($_POST["mdp"])) {
+            $pseudo = $_POST["pseudo"];
+            $mdp = $_POST["mdp"];
+            $sql = "SELECT * FROM user WHERE pseudo = '$pseudo' AND mdp = '$mdp'";
+            $result = $db->query($sql);
+            $user = $result->fetch();
+            if ($user) {
+                session_start();
+                $_SESSION["pseudo"] = $user["pseudo"];
+                $_SESSION["id"] = $user["id"];
+                $_SESSION["login"] = true;
+                header("Location: accueil.php");
+            }
+            else {
+                echo "Erreur";
+                header("Location: connexion_user.php");
+            }
         }
         else {
             echo "Erreur";
             header("Location: connexion_user.php");
         }
-    }
-    else {
-        echo "Erreur";
-        header("Location: connexion_user.php");
     }
 ?>

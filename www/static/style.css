@@ -22,6 +22,20 @@ body {
     background-color: transparent;
 }
 
+.connecter {
+    display: flex;
+    flex-direction: row;
+}
+
+.util {
+    margin-left: 20px;
+    padding: none;
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: rgb(235, 245, 34);
+}
+
 .descri>p {
     color: white;
     font-size: 20px;
@@ -135,6 +149,7 @@ body {
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
+    margin : 20px;
 }
 
 .connex:hover {

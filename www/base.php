@@ -20,6 +20,12 @@
         <div class="connecter">
             <a href="connexion_user.php"><button class="connex">Se connecter</button></a>
             <a href="inscription.php"><button class="connex">S'inscrire</button></a>
+            <?php session_start();
+            if(isset($_SESSION["login"]) || $_SESSION["login"] == true){
+                $util = $_SESSION["pseudo"];
+                echo "<p class='util'>$util</p>";
+            }
+            ?>
     </header>
 </body>
 </html>

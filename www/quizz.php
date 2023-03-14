@@ -1,4 +1,4 @@
-<?php require_once "base.html";?>
+<?php require_once "base.php";?>
 <body class="quizz">
     <?php $idQ = $_GET["id"];
         echo "<button><a href='creer_question.php?idQ=$idQ'>Créer une question</a></button>"

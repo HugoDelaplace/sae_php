@@ -1,4 +1,4 @@
-<?php require_once "base.html";?>
+<?php require_once "base.php";?>
 <body class="quizz">
     <h1>Créer un quizz</h1>
     <form action="quizz_cree.php" method="get">

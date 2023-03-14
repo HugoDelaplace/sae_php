@@ -1,4 +1,4 @@
-<?php require_once "base.html";?>
+<?php require_once "base.php";?>
 <body class="quizz">
     <?php $id=$GET_["id"]; ?>
     <h1>Quizz n°<?php echo $id; ?> </h1>
