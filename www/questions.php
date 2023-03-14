@@ -5,7 +5,12 @@
     <ul>
         <?php require "connexion.php";
         $db = connectBd();
-        $id = $_GET["id"];
+        if (isset($_POST["id"])){
+            $id = $_POST["id"];
+        }
+        else {
+            $id = $_GET["id"];
+        }
         $strid = strval($id);
         $sql = "SELECT * FROM QUESTION where idQ = $id";
         $result = $db->query($sql);
@@ -99,13 +104,20 @@
         );
 
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            echo "<form method='POST' action='questions.php?id='".$_GET['id']."'><ol>";
+            //Récupère l'id du Quizz pour le renvoyer dans l'url de la page
+            echo "<form method='POST' action='questions.php'?>";
+            echo "<input type='hidden' name='id' value='".$_GET['id']."'><ol>";
             foreach ($listeQuestions as $q) {
                 echo "<li><h1>$q[nom]</h1>";
                 $questionHandler[$q["type"]]($q);
+                $nom = $q["nom"];
+                // Supprimer la question
+                echo "<button><a href='supprimer_question.php?idQ=$id&nom=$nom'>Supprimer</a></button>";
             }
             echo "</ol><input type='submit' value='Envoyer'></form>";
         } else {
+            $id = $_POST["id"];
+            print_r($id);
             $question_total = 0;
             $question_correct = 0;
             $score_total = 0;
