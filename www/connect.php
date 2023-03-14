@@ -1,5 +1,5 @@
 <?php
-define('USER', "root");
-define('PASSWD', "delaplace");
+define('USER', "bastian");
+define('PASSWD', "bastian");
 define('SERVER', "localhost");
-define('BASE', "sae_php");
+define('BASE', "saePHP");

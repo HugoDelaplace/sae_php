@@ -22,6 +22,7 @@
             if (isset($_SESSION["login"]) || $_SESSION["login"] == true) {
                 $util = $_SESSION["pseudo"];
                 echo "<p class='util'>$util</p>";
+                echo "<a href='deconnexion.php'><button class='connex'>Déconnexion</button></a>";
             }
             ?>
     </header>
