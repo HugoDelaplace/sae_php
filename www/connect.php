@@ -1,5 +1,5 @@
 <?php
-define('USER', "root");
+define('USER', "delaplace");
 define('PASSWD', "delaplace");
-define('SERVER', "localhost");
-define('BASE', "sae_php");
+define('SERVER', "servinfo-mariadb");
+define('BASE', "DBdelaplace");

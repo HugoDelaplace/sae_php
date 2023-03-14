@@ -1,4 +1,4 @@
-<?php require_once "base.html"; ?>
+<?php require_once "base.php"; ?>
 
 <body class="quizz">
     <h1>Liste des questions du Quiz</h1>
@@ -112,7 +112,7 @@
                 $questionHandler[$q["type"]]($q);
                 $nom = $q["nom"];
                 // Supprimer la question
-                echo "<button><a href='supprimer_question.php?idQ=$id&nom=$nom'>Supprimer</a></button>";
+                echo "<button><a href='supprimer_question.php?id=$id&nom=$nom'>Supprimer</a></button>";
             }
             echo "</ol><input type='submit' value='Envoyer'></form>";
         } else {
