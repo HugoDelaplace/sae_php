@@ -1,4 +1,9 @@
-<?php require_once "base.php";?>
+<?php require_once "base.php";
+if (empty($_SESSION['login'])) {
+    header('Location: inscription.php');
+    exit;
+}
+?>
 
 <body class="quizz">
     <h1>PokéQuizz</h1>

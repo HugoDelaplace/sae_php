@@ -19,7 +19,7 @@
         if (!empty($_POST["pseudo"]) && !empty($_POST["mdp"])) {
             $pseudo = $_POST["pseudo"];
             $mdp = $_POST["mdp"];
-            $sql = "SELECT * FROM user WHERE pseudo = '$pseudo' AND mdp = '$mdp'";
+            $sql = "SELECT * FROM USER WHERE pseudo = '$pseudo' AND mdp = '$mdp'";
             $result = $db->query($sql);
             $user = $result->fetch();
             if ($user) {
